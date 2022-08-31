@@ -1,6 +1,6 @@
 Tool to bot your dsc.gg click score
 
-release = 10 stars
+release = follow me and star
 
 <img src="./b4.jpg">
 <img src="./after.jpg">
