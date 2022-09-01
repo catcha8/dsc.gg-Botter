@@ -1,6 +1,8 @@
 Tool to bot your dsc.gg click score
 
-release = follow me and star
+THIS TOOL IS FOR DEVS SO NO SUPPORT
+
+pip install requests
 
 <img src="./top1word.jpg">
 <img src="./b4.jpg">
