@@ -27,7 +27,7 @@ def click():
     os.system(f"title Hits: {cit} ^| Failed {failed}")
 
 th = int(input("Threads -->"))
-code = int(input("Code to bot -->"))
+code = input("Code to bot -->")
 
 while True:
     if threading.active_count() < th:
