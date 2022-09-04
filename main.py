@@ -1,37 +1,38 @@
-from urllib import request
-import requests,threading,os,random
+import os
+import random
+import requests
+import threading
 
-cit = 0
-failed = 0
-readproxy = open('proxies.txt','r')
-readproxy2 = readproxy.readlines()
-workproxy = []
-for proxy3 in readproxy2:
-    proxystrip = proxy3.strip('\n')
-    workproxy.append(proxystrip)
+
+class stats():
+    hits = 0
+    failed = 0
+
 
 os.system("cls")
-print("discord.gg/catcha | dsc.gg/catcha")
-print("dsc.gg Click baiter")
+threads = int(input("Threads --> "))
+code = input("Code to bot --> ")
+
 
 def click():
-    global cit,failed,code
     try:
-        proxyb = random.choice(workproxy)
+        os.system(f"title discord.gg/catcha ^| Hits: {stats.hits} ^| Failed {stats.failed}")
 
-        proxies = {'http': f'http://{proxyb}','https':f'http://{proxyb}'}
-        r = requests.get(f"https://dsc.gg/{code}?ref=homepage", proxies=proxies)
-        cit +=1
+        proxys = open('proxies.txt', 'r').read().splitlines()
+        proxy = random.choice(proxys)
+        proxies = {'http': f'http://{proxy}', 'https':f'http://{proxy}'}
+
+        headers = {
+            'sec-ch-ua': '"Chromium";v="104", " Not A;Brand";v="99", "Google Chrome";v="104"',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
+        }
+
+        r = requests.get(f"https://dsc.gg/{code}?ref=homepage", headers=headers, proxies=proxies)
+        stats.hits += 1
     except:
-        failed +=1
-    os.system(f"title Hits: {cit} ^| Failed {failed}")
-
-th = int(input("Threads -->"))
-code = input("Code to bot -->")
+        stats.failed += 1
 
 while True:
-    if threading.active_count() < th:
-        for x in range(th):
+    if threading.active_count() < threads:
+        for x in range(threads):
             threading.Thread(target=click).start()
-
-
