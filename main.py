@@ -1,7 +1,7 @@
 import requests, threading, random, user_agent
 
 code    = input('>> code :: ')
-proxys  = open('new_prox.txt', 'r').read().splitlines(); proxy   = random.choice(proxys); proxies = {'http': f'http://{proxy}', 'https': f'http://{proxy}'}
+proxys  = open('proxies.txt', 'r').read().splitlines(); proxy   = random.choice(proxys); proxies = {'http': f'http://{proxy}', 'https': f'http://{proxy}'}
 view    = 0
 
 def __bot():
