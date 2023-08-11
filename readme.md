@@ -8,4 +8,4 @@ pip install requests
 <img src="./b4.jpg">
 <img src="./after.jpg">
 
-join https://discord.gg/catcha
+join https://discord.gg/hktVzrff54
